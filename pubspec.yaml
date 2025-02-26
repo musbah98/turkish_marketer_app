@@ -1,0 +1,56 @@
+name: turkish_marketer
+description: Turkish Marketer App.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.19.0
+  flutter_riverpod: ^2.5.1
+  shared_preferences: ^2.0.9
+  dio: ^5.7.0 
+  get_it: ^7.7.0
+  flutter_svg: ^2.0.10
+  keyboard_actions: ^4.2.0
+  cupertino_icons: ^1.0.8
+  path: ^1.9.0
+  libphonenumber_plugin: ^0.3.3
+  webview_flutter: ^4.8.0
+  flutter_verification_code: ^1.1.7
+  file_picker: ^8.1.2
+  cached_network_image: ^3.4.1
+  connectivity_plus: ^6.0.5
+  #azlistview: ^2.0.0
+  #intl_phone_field: ^3.2.0
+
+
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/locale/
+    - assets/images/
+
+  
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Medium.ttf
+        - asset: assets/fonts/Inter-Regular.ttf
+        - asset: assets/fonts/Inter-SemiBold.ttf
+         
+ 
