@@ -37,7 +37,7 @@ class OnBoardingViewModel extends ChangeNotifier {
       {
         'color': '#a3e4f1',
         'title': 'Fresh Drinks, Stay Fresh',
-        'image': 'https://www.virginiakerr.ie/wp-content/uploads/2017/05/placeholder-1.png.1236x617_default.png',
+        'image': 'https://petapixel.com/assets/uploads/2024/01/The-Star-of-System-Sol-Rectangle-640x800.jpg',
         'description':
             'Not all food, we provide clear healthy drink options for you. Fresh taste always accompanies you',
         'skip': true
@@ -45,7 +45,8 @@ class OnBoardingViewModel extends ChangeNotifier {
       {
         'color': '#31b77a',
         'title': 'Let\'s Cooking',
-        'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzSc0E_-ezcw1juku7x_q9rIVtGDEFGDsZnA&s',
+        'image':
+            'https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg?semt=ais_hybrid&w=740&q=80',
         'description': 'Are you ready to make a dish for your friends or family? create an account and cooks',
         'skip': false
       },

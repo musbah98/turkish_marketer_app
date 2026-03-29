@@ -38,7 +38,7 @@ Widget textColumnView({required String title, required String subTitle}) => Colu
         Flexible(
           child: customTextApp(
             text: subTitle,
-            color: Colors.white.withOpacity(0.56),
+            color: Colors.white.withAlpha(180),
             maxLine: 3,
             align: TextAlign.center,
             overflow: TextOverflow.fade,

@@ -87,7 +87,7 @@ class _AddCompanyScreen extends ConsumerState<AddCompanyScreen> {
                             borderRadius: BorderRadius.circular(8),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.03),
+                                color: Colors.black.withAlpha(30),
                                 blurRadius: 8,
                                 spreadRadius: 4,
                                 offset: const Offset(0, 9),

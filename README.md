@@ -39,6 +39,22 @@ A comprehensive Flutter mobile application for the Turkish Marketer platform —
 
 ---
 
+## 📸 Screenshots
+
+| Splash | Login |
+|:------:|:-----:|
+| <img src="assets/screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-03-29%20at%2013.27.08.png" width="150"> | <img src="assets/screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-03-29%20at%2013.35.46.png" width="150"> |
+
+| Imports | Companies | Post Detail |
+|:-------:|:---------:|:-----------:|
+| <img src="assets/screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-03-29%20at%2013.36.08.png" width="150"> | <img src="assets/screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-03-29%20at%2013.36.40.png" width="150"> | <img src="assets/screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-03-29%20at%2013.36.52.png" width="150"> |
+
+| Post Attachments | Categories | Profile |
+|:----------------:|:----------:|:-------:|
+| <img src="assets/screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-03-29%20at%2013.37.04.png" width="150"> | <img src="assets/screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-03-29%20at%2013.37.11.png" width="150"> | <img src="assets/screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-03-29%20at%2013.37.35.png" width="150"> |
+
+---
+
 ## 🛠 Tech Stack
 
 | Category                | Technology                          | Purpose                                    |

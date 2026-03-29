@@ -1,22 +1,14 @@
 import 'dart:developer';
 
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:libphonenumber_plugin/libphonenumber_plugin.dart';
 
 import 'package:turkish_marketer/extentions.dart';
-import 'package:turkish_marketer/repositories/auth_repository.dart';
-import 'package:turkish_marketer/screens/auth/verification/verification_view_model.dart';
 import 'package:turkish_marketer/utils/IntlPhoneField/helpers.dart';
 import 'package:turkish_marketer/utils/IntlPhoneField/phone_number.dart';
-import 'package:turkish_marketer/utils/local_repository.dart';
-import 'package:turkish_marketer/utils/routing/navigation_service.dart';
-import 'package:turkish_marketer/utils/routing/routes.dart';
 
-import '../../../di.dart';
 import '../../../models/drop_down_obj.dart';
-import '../../../repositories/registration_info_repository.dart';
 import '../../../utils/common_widgets/loading_dialog.dart';
 
 final signupViewModelProvider = ChangeNotifierProvider.autoDispose((ref) {
@@ -161,13 +153,13 @@ class SignupViewModel extends ChangeNotifier {
     );
 
     try {
-      final response = await sl<RegistrationInfoRepository>().getSignUpInfo();
+      // final response = await sl<RegistrationInfoRepository>().getSignUpInfo();
 
-      countriesList =
-          response.result!.countries!.map((e) => DropdownObj(id: "${e.id}", name: e.name, image: e.flag)).toList();
-      var countryCode = (getCountryCodeByDialCode("+${response.result?.mobileIntro ?? ""}"));
+      // countriesList =
+      //     response.result!.countries!.map((e) => DropdownObj(id: "${e.id}", name: e.name, image: e.flag)).toList();
+      // var countryCode = (getCountryCodeByDialCode("+${response.result?.mobileIntro ?? ""}"));
 
-      changeCountry(countryCode ?? "");
+      // changeCountry(countryCode ?? "");
     } catch (e) {
       log('errorMessage : ${e.toString()}');
       notifyListeners();
@@ -188,39 +180,39 @@ class SignupViewModel extends ChangeNotifier {
         title: "Signup".localized(),
       );
 
-      try {
-        final response = await sl<AuthRepository>().signUp(
-          name,
-          email,
-          password,
-          mobile,
-          mobileIntro,
-          selectedCountry?.id ?? "",
-        );
+      // try {
+      //   final response = await sl<AuthRepository>().signUp(
+      //     name,
+      //     email,
+      //     password,
+      //     mobile,
+      //     mobileIntro,
+      //     selectedCountry?.id ?? "",
+      //   );
 
-        if (response.result?.activateCode != null) {
-          var verificationViewModel = ref.watch(verificationViewModelProvider);
-          //verificationViewModel.activeCode = "${response.result?.activateCode!}";
-          verificationViewModel.email = email;
+      //   if (response.result?.activateCode != null) {
+      //     var verificationViewModel = ref.watch(verificationViewModelProvider);
+      //     //verificationViewModel.activeCode = "${response.result?.activateCode!}";
+      //     verificationViewModel.email = email;
 
-          sl<LocalRepo>().setUserObject(response.result!);
+      //     sl<LocalRepo>().setUserObject(response.result!);
 
-          sl<Dio>().options.headers.addAll(
-            {'Authorization': 'Bearer ${response.result?.token}'},
-          );
+      //     sl<Dio>().options.headers.addAll(
+      //       {'Authorization': 'Bearer ${response.result?.token}'},
+      //     );
 
-          sl<NavigationService>().navigateTo(verificationScreen);
-        }
+      //     sl<NavigationService>().navigateTo(verificationScreen);
+      //   }
 
-        notifyListeners();
-      } catch (e) {
-        log('errorMessage : ${e.toString()}');
-        notifyListeners();
-      } finally {
-        isLoading = false;
-        notifyListeners();
-        LoadingAlertDialog.dismiss();
-      }
+      //   notifyListeners();
+      // } catch (e) {
+      //   log('errorMessage : ${e.toString()}');
+      //   notifyListeners();
+      // } finally {
+      //   isLoading = false;
+      //   notifyListeners();
+      //   LoadingAlertDialog.dismiss();
+      // }
     }
   }
 }

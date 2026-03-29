@@ -45,9 +45,6 @@ Widget indicatorsFalse() {
     height: 8,
     width: 8,
     margin: const EdgeInsets.only(right: 8),
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(50),
-      color: Colors.white.withOpacity(0.56),
-    ),
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(50), color: Colors.white.withAlpha(60)),
   );
 }

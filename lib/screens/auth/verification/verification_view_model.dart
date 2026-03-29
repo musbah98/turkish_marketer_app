@@ -2,12 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:turkish_marketer/di.dart';
 import 'package:turkish_marketer/extentions.dart';
-import 'package:turkish_marketer/repositories/auth_repository.dart';
-import 'package:turkish_marketer/utils/common_widgets/show_snack_bar.dart';
-import 'package:turkish_marketer/utils/routing/navigation_service.dart';
-import 'package:turkish_marketer/utils/routing/routes.dart';
 
 import '../../../utils/common_widgets/loading_dialog.dart';
 
@@ -54,22 +49,22 @@ class VerificationViewModel extends ChangeNotifier {
         title: "Verify Email".localized(),
       );
 
-      try {
-        final response = await sl<AuthRepository>().verifyEmail(textCode);
-        if (response.status?.success == true) {
-          showSnackBar(response.status?.otherTxt ?? "");
-          sl<NavigationService>().navigateTo(addCompanyScreen);
-        }
+      // try {
+      //   final response = await sl<AuthRepository>().verifyEmail(textCode);
+      //   if (response.status?.success == true) {
+      //     showSnackBar(response.status?.otherTxt ?? "");
+      //     sl<NavigationService>().navigateTo(addCompanyScreen);
+      //   }
 
-        notifyListeners();
-      } catch (e) {
-        log('errorMessage : ${e.toString()}');
-        notifyListeners();
-      } finally {
-        isLoading = false;
-        notifyListeners();
-        LoadingAlertDialog.dismiss();
-      }
+      //   notifyListeners();
+      // } catch (e) {
+      //   log('errorMessage : ${e.toString()}');
+      //   notifyListeners();
+      // } finally {
+      //   isLoading = false;
+      //   notifyListeners();
+      //   LoadingAlertDialog.dismiss();
+      // }
     }
   }
 
@@ -82,20 +77,20 @@ class VerificationViewModel extends ChangeNotifier {
       title: "Resend Activation Code".localized(),
     );
 
-    try {
-      final response = await sl<AuthRepository>().resendActivationCode();
-      if (response.status?.success == true) {
-        showSnackBar(response.status?.otherTxt ?? "");
-      }
+    // try {
+    //   final response = await sl<AuthRepository>().resendActivationCode();
+    //   if (response.status?.success == true) {
+    //     showSnackBar(response.status?.otherTxt ?? "");
+    //   }
 
-      notifyListeners();
-    } catch (e) {
-      log('errorMessage : ${e.toString()}');
-      notifyListeners();
-    } finally {
-      isLoading = false;
-      notifyListeners();
-      LoadingAlertDialog.dismiss();
-    }
+    //   notifyListeners();
+    // } catch (e) {
+    //   log('errorMessage : ${e.toString()}');
+    //   notifyListeners();
+    // } finally {
+    //   isLoading = false;
+    //   notifyListeners();
+    //   LoadingAlertDialog.dismiss();
+    // }
   }
 }

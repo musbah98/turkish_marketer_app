@@ -4,11 +4,8 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:turkish_marketer/extentions.dart';
-import 'package:turkish_marketer/repositories/lookup_repository.dart';
-import 'package:turkish_marketer/repositories/registration_info_repository.dart';
-import 'api_service/api_service.dart';
+
 import 'environment.dart';
-import 'repositories/auth_repository.dart';
 import 'utils/common_widgets/error_dialog.dart';
 import 'utils/local_repository.dart';
 import 'utils/routing/navigation_service.dart';
@@ -98,17 +95,17 @@ Future<void> init() async {
 
   sl.registerLazySingleton<Dio>(() => client);
 
-  sl.registerLazySingleton<AuthRepository>(() => AuthRepository(
-        apiService: ApiService(dio: client),
-      ));
+  // sl.registerLazySingleton<AuthRepository>(() => AuthRepository(
+  //       apiService: ApiService(dio: client),
+  //     ));
 
-  sl.registerLazySingleton<LookupRepository>(() => LookupRepository(
-        apiService: ApiService(dio: client),
-      ));
+  // sl.registerLazySingleton<LookupRepository>(() => LookupRepository(
+  //       apiService: ApiService(dio: client),
+  //     ));
 
-  sl.registerLazySingleton<RegistrationInfoRepository>(() => RegistrationInfoRepository(
-        apiService: ApiService(dio: client),
-      ));
+  // sl.registerLazySingleton<RegistrationInfoRepository>(() => RegistrationInfoRepository(
+  //       apiService: ApiService(dio: client),
+  //     ));
 
   sl.registerLazySingleton(() => NavigationService());
 

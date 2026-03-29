@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:turkish_marketer/di.dart';
 import 'package:turkish_marketer/extentions.dart';
+import 'package:turkish_marketer/utils/app_widgets/buttons_widgets/custom_app_button.dart';
+import 'package:turkish_marketer/utils/app_widgets/buttons_widgets/custom_app_text_button.dart';
 import 'package:turkish_marketer/utils/app_widgets/custom_app_text.dart';
+import 'package:turkish_marketer/utils/app_widgets/text_field_widgets/custom_app_text_field.dart';
+import 'package:turkish_marketer/utils/routing/navigation_service.dart';
+import 'package:turkish_marketer/utils/routing/routes.dart';
 
 import '../../../utils/app_widgets/app_top_header_image.dart';
-import '../../../utils/app_widgets/buttons_widgets/custom_app_button.dart';
-import '../../../utils/app_widgets/buttons_widgets/custom_app_text_button.dart';
-import '../../../utils/app_widgets/text_field_widgets/custom_app_text_field.dart';
 import '../../../utils/app_widgets/main_title_with_logo.dart';
-import '../../../utils/connectivity_service.dart';
 import '../../../utils/hide_keyboard_on_tap.dart';
-import '../../../utils/routing/navigation_service.dart';
-import '../../../utils/routing/routes.dart';
 import 'login_view_model.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
@@ -27,12 +26,6 @@ class _LoginScreen extends ConsumerState<LoginScreen> {
   @override
   void initState() {
     super.initState();
-
-    //bool checkInternetConnection() {
-    var connectivityService = ref.read(connectivityServiceProvider);
-    connectivityService.checkInternetConnection();
-    //return connectivityService.isConnected;
-    // }
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final viewModel = ref.read(loginViewModelProvider);

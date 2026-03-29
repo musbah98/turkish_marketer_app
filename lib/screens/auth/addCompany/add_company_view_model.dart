@@ -5,17 +5,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:libphonenumber_plugin/libphonenumber_plugin.dart';
 
 import 'package:turkish_marketer/extentions.dart';
-import 'package:turkish_marketer/repositories/auth_repository.dart';
 import 'package:turkish_marketer/utils/IntlPhoneField/helpers.dart';
 import 'package:turkish_marketer/utils/IntlPhoneField/phone_number.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:turkish_marketer/utils/common_widgets/show_snack_bar.dart';
-import 'package:turkish_marketer/utils/routing/navigation_service.dart';
-import 'package:turkish_marketer/utils/routing/routes.dart';
 
-import '../../../di.dart';
 import '../../../models/drop_down_obj.dart';
-import '../../../repositories/registration_info_repository.dart';
 import '../../../utils/common_widgets/loading_dialog.dart';
 
 final addCompanyViewModelProvider = ChangeNotifierProvider.autoDispose((ref) {
@@ -228,15 +223,15 @@ class AddCompanyViewModel extends ChangeNotifier {
     );
 
     try {
-      final response = await sl<RegistrationInfoRepository>().getAddCompanyInfo();
+      // final response = await sl<RegistrationInfoRepository>().getAddCompanyInfo();
 
-      countriesList =
-          response.result!.countries!.map((e) => DropdownObj(id: "${e.id}", name: e.name, image: e.flag)).toList();
-      companiesTypesList =
-          response.result!.companyType!.map((e) => DropdownObj(id: "${e.id}", name: e.name, image: e.flag)).toList();
-      var countryCode = (getCountryCodeByDialCode("+${response.result?.mobileIntro ?? ""}"));
+      // countriesList =
+      //     response.result!.countries!.map((e) => DropdownObj(id: "${e.id}", name: e.name, image: e.flag)).toList();
+      // companiesTypesList =
+      //     response.result!.companyType!.map((e) => DropdownObj(id: "${e.id}", name: e.name, image: e.flag)).toList();
+      // var countryCode = (getCountryCodeByDialCode("+${response.result?.mobileIntro ?? ""}"));
 
-      changeCountry(countryCode ?? "");
+      // changeCountry(countryCode ?? "");
     } catch (e) {
       log('errorMessage : ${e.toString()}');
       notifyListeners();
@@ -258,21 +253,21 @@ class AddCompanyViewModel extends ChangeNotifier {
       );
 
       try {
-        final response = await sl<AuthRepository>().addCompany(
-          name,
-          selectedCompanyType?.id ?? "",
-          mobile,
-          urlText,
-          selectedCountry?.id ?? "",
-          billingAddress,
-          filePath,
-          description,
-        );
+        // final response = await sl<AuthRepository>().addCompany(
+        //   name,
+        //   selectedCompanyType?.id ?? "",
+        //   mobile,
+        //   urlText,
+        //   selectedCountry?.id ?? "",
+        //   billingAddress,
+        //   filePath,
+        //   description,
+        // );
 
-        if (response.status?.success == true) {
-          showSnackBar(response.status?.otherTxt ?? "");
-          sl<NavigationService>().navigateToAndRemove(tabBarScreen);
-        }
+        // if (response.status?.success == true) {
+        //   showSnackBar(response.status?.otherTxt ?? "");
+        //   sl<NavigationService>().navigateToAndRemove(tabBarScreen);
+        // }
 
         notifyListeners();
       } catch (e) {
